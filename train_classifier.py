@@ -1,4 +1,6 @@
 import sys
+import seaborn as sns
+import matplotlib.pyplot as plt
 import nltk
 nltk.download(['punkt', 'wordnet', 'averaged_perceptron_tagger', 'stopwords'])
 from nltk.corpus import stopwords
@@ -47,6 +49,20 @@ def load_data(database_filepath):
     y = df[y_vars].values
     return X, y, df.columns
 
+def plot_bar(df, y_vars):
+       y_count = []
+       for var in y_vars:
+           count = df[var].sum()
+           y_count.append(count)
+       
+       plt.figure(figsize = (10,10))
+       plot = sns.barplot(y = y_vars, x = y_count)
+       plt.title('Category Frequency');
+       return plot
+
+def heatmap(df, y_vars)
+
+       return sns.heatmap(df[y_vars].corr())
 
 def tokenize(text, lemmatizer=WordNetLemmatizer(), stop_words = stopwords.words('english')):
      '''

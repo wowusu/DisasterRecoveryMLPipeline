@@ -60,7 +60,7 @@ threadpoolctl==2.1.0
 tornado==6.0.4
 tqdm==4.46.1
 traitlets==4.3.3
-ujson==1.35
+ujson==5.4.0
 urllib3==1.25.9
 wcwidth==0.2.4
 webencodings==0.5.1
